@@ -1,0 +1,13 @@
+.DS_Store
+.env*
+.venv
+venv
+.vscode
+.idea
+__pycache__
+*.egg*
+*.pyc
+.coverage
+.pytest_cache/
+htmlcov/
+staticfiles
