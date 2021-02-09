@@ -39,13 +39,13 @@ async def get_vacancies_links(text: str) -> List[str]:
                 tasks += [get_data(session=s, link=_base_url, **params)]
         results = await asyncio.gather(*tasks, return_exceptions=True)
         items = [item for result in results for item in result['items']]
-        links += [f"https://api.hh.ru/vacancies/{_['id']}" for _ in items]
+        links += [f"{_base_url}/{_['id']}" for _ in items]
     return links
 
 
 async def collect_data(links: list) -> List[Dict[str, Any]]:
     async with aiohttp.ClientSession() as s:
-        tasks = [get_data(session=s, link=l) for l in links]
+        tasks = [get_data(session=s, link=link) for link in links]
         data = await asyncio.gather(*tasks, return_exceptions=True)
     return data
 
@@ -54,7 +54,7 @@ async def save(data: List[Dict[str, Any]]) -> str:
     """
     Dummy save data
     """
-    today = datetime.now().strftime("%Y-%m-%d_%H%M%S")
+    today = datetime.now().strftime("%Y%m%d%H%M%S")
     file_name = f"/tmp/hh_{today}.json"
     with open(file_name, "w") as f:
         json.dump(data, f, ensure_ascii=False)
@@ -62,10 +62,10 @@ async def save(data: List[Dict[str, Any]]) -> str:
 
 
 async def main(search_str: str) -> None:
-    log.info("Start receiveng data from api.hh.ru")
+    log.info("Starts receiving data from api.hh.ru")
     urls = await get_vacancies_links(search_str)
     data = await collect_data(urls)
-    log.info("Finished receiveng data from api.hh.ru")
+    log.info("Finished receiving data from api.hh.ru")
     result = await save(data)
     log.info("Data saved at %s", result)
 
