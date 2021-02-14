@@ -54,7 +54,7 @@ async def save(data: List[Dict[str, Any]]) -> str:
     """
     Dummy save data
     """
-    today = datetime.now().strftime("%Y%m%d%H%M%S")
+    today = datetime.now().strftime("%Y%m%d_%H%M%S")
     file_name = f"/tmp/hh_{today}.json"
     with open(file_name, "w") as f:
         json.dump(data, f, ensure_ascii=False)
