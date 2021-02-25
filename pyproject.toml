@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "grabbers"
+version = "1.0.0"
+description = "Grabbers for free"
+authors = ["imflop <imflop@gmail.com>"]
+exclude = ["tests", "*.tests"]
+
+[tool.poetry.scripts]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+aiohttp = "^3.7.3"
+typer = "^0.3.2"
+
+[tool.poetry.dev-dependencies]
+flake8 = "^3.8.4"
+isort = {extras = ["pyproject"], version = "^5.7.0"}
+mypy = "^0.812"
+black = "^20.8b1"
+
+[tool.isort]
+line_length = 120
+multi_line_output = 3
+include_trailing_comma = true
+lines_after_imports = 2
+force_grid_wrap = 3
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
