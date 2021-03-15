@@ -71,3 +71,9 @@ async def run(search_str: str) -> None:
     log.info("Finished receiving data from api.hh.ru")
     result = await save(data)
     log.info("Data saved at %s", result)
+
+
+async def run_at() -> None:
+    import time
+
+    time.monotonic
