@@ -1,6 +1,14 @@
 PROJECT_NAME := grabbers
 PY_MODULE := grabbers
 MAX_LINE_LENGTH := 120
+POETRY_VERSION := 1.1.4
+
+
+deps:
+	curl -sSL https://raw.githubusercontent.com/sdispater/poetry/${POETRY_VERSION}/get-poetry.py > get-poetry.py \
+	&& cat get-poetry.py | sha256sum -c poetry-${POETRY_VERSION}.checksum \
+	&& python get-poetry.py --version ${POETRY_VERSION} -y \
+	&& rm get-poetry.py
 
 
 lint:
