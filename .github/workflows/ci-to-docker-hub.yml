@@ -1,8 +1,8 @@
 name: CI to Docker Hub
 on:
   push:
-    branches:
-      - 'feature/**'
+    branches: [ master ]
+
 jobs:
   build:
     runs-on: ubuntu-latest
