@@ -18,6 +18,17 @@ yarl = ">=1.0,<2.0"
 speedups = ["aiodns", "brotlipy", "cchardet"]
 
 [[package]]
+name = "aiohttp-cors"
+version = "0.7.0"
+description = "CORS support for aiohttp"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+aiohttp = ">=1.1"
+
+[[package]]
 name = "aiomisc"
 version = "12.0.0"
 description = "aiomisc - miscellaneous utils for asyncio"
@@ -53,6 +64,14 @@ description = "Timeout context manager for asyncio programs"
 category = "main"
 optional = false
 python-versions = ">=3.5.3"
+
+[[package]]
+name = "atomicwrites"
+version = "1.4.0"
+description = "Atomic file writes."
+category = "dev"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 
 [[package]]
 name = "attrs"
@@ -126,6 +145,34 @@ python-versions = "*"
 colorama = {version = "*", markers = "sys_platform == \"win32\""}
 
 [[package]]
+name = "configargparse"
+version = "1.4"
+description = "A drop-in replacement for argparse that allows options to also be set via config files and/or environment variables."
+category = "main"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
+
+[package.extras]
+yaml = ["pyyaml"]
+
+[[package]]
+name = "dependency-injector"
+version = "4.31.1"
+description = "Dependency injection framework for Python"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+six = ">=1.7.0,<=1.15.0"
+
+[package.extras]
+aiohttp = ["aiohttp"]
+flask = ["flask"]
+pydantic = ["pydantic"]
+yaml = ["pyyaml"]
+
+[[package]]
 name = "flake8"
 version = "3.8.4"
 description = "the modular source code checker: pep8 pyflakes and co"
@@ -147,8 +194,16 @@ optional = false
 python-versions = ">=3.4"
 
 [[package]]
+name = "iniconfig"
+version = "1.1.1"
+description = "iniconfig: brain-dead simple config-ini parsing"
+category = "dev"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "isort"
-version = "5.7.0"
+version = "5.8.0"
 description = "A Python utility / library to sort Python imports."
 category = "dev"
 optional = false
@@ -200,12 +255,42 @@ optional = false
 python-versions = "*"
 
 [[package]]
+name = "packaging"
+version = "20.9"
+description = "Core utilities for Python packages"
+category = "dev"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+
+[package.dependencies]
+pyparsing = ">=2.0.2"
+
+[[package]]
 name = "pathspec"
 version = "0.8.1"
 description = "Utility library for gitignore style pattern matching of file paths."
 category = "dev"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
+
+[[package]]
+name = "pluggy"
+version = "0.13.1"
+description = "plugin and hook calling mechanisms for python"
+category = "dev"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+
+[package.extras]
+dev = ["pre-commit", "tox"]
+
+[[package]]
+name = "py"
+version = "1.10.0"
+description = "library with cross-python path, ini-parsing, io, code, log facilities"
+category = "dev"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 
 [[package]]
 name = "pycodestyle"
@@ -224,12 +309,49 @@ optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 
 [[package]]
+name = "pyparsing"
+version = "2.4.7"
+description = "Python parsing module"
+category = "dev"
+optional = false
+python-versions = ">=2.6, !=3.0.*, !=3.1.*, !=3.2.*"
+
+[[package]]
+name = "pytest"
+version = "6.2.2"
+description = "pytest: simple powerful testing with Python"
+category = "dev"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+atomicwrites = {version = ">=1.0", markers = "sys_platform == \"win32\""}
+attrs = ">=19.2.0"
+colorama = {version = "*", markers = "sys_platform == \"win32\""}
+iniconfig = "*"
+packaging = "*"
+pluggy = ">=0.12,<1.0.0a1"
+py = ">=1.8.2"
+toml = "*"
+
+[package.extras]
+testing = ["argcomplete", "hypothesis (>=3.56)", "mock", "nose", "requests", "xmlschema"]
+
+[[package]]
 name = "regex"
 version = "2020.11.13"
 description = "Alternative regular expression module, to replace re."
 category = "dev"
 optional = false
 python-versions = "*"
+
+[[package]]
+name = "six"
+version = "1.15.0"
+description = "Python 2 and 3 compatibility utilities"
+category = "main"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*"
 
 [[package]]
 name = "toml"
@@ -287,7 +409,7 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "0108a03436fcfe021335b92e2f533c0fd28ebcc0834d0275db2b58ad389d8bfa"
+content-hash = "488491e2c9acc2a3a2a8ac66e873620e4ecb62cc704497a3aae92bc316b966bc"
 
 [metadata.files]
 aiohttp = [
@@ -329,6 +451,10 @@ aiohttp = [
     {file = "aiohttp-3.7.3-cp39-cp39-win_amd64.whl", hash = "sha256:e1b95972a0ae3f248a899cdbac92ba2e01d731225f566569311043ce2226f5e7"},
     {file = "aiohttp-3.7.3.tar.gz", hash = "sha256:9c1a81af067e72261c9cbe33ea792893e83bc6aa987bfbd6fdc1e5e7b22777c4"},
 ]
+aiohttp-cors = [
+    {file = "aiohttp-cors-0.7.0.tar.gz", hash = "sha256:4d39c6d7100fd9764ed1caf8cebf0eb01bf5e3f24e2e073fda6234bc48b19f5d"},
+    {file = "aiohttp_cors-0.7.0-py3-none-any.whl", hash = "sha256:0451ba59fdf6909d0e2cd21e4c0a43752bc0703d33fc78ae94d9d9321710193e"},
+]
 aiomisc = [
     {file = "aiomisc-12.0.0-py3-none-any.whl", hash = "sha256:40cd0a4d1d7b56838e9d7a4d2683b8014e9452f7d2e291a9997d790466f41fbf"},
     {file = "aiomisc-12.0.0.tar.gz", hash = "sha256:9a8fcc1edca33d2dbf0851cbb8768ea51b3ffa03eb988db39a51e671cd5d4d82"},
@@ -340,6 +466,10 @@ appdirs = [
 async-timeout = [
     {file = "async-timeout-3.0.1.tar.gz", hash = "sha256:0c3c816a028d47f659d6ff5c745cb2acf1f966da1fe5c19c77a70282b25f4c5f"},
     {file = "async_timeout-3.0.1-py3-none-any.whl", hash = "sha256:4291ca197d287d274d0b6cb5d6f8f8f82d434ed288f962539ff18cc9012f9ea3"},
+]
+atomicwrites = [
+    {file = "atomicwrites-1.4.0-py2.py3-none-any.whl", hash = "sha256:6d1784dea7c0c8d4a5172b6c620f40b6e4cbfdf96d783691f2e1302a7b88e197"},
+    {file = "atomicwrites-1.4.0.tar.gz", hash = "sha256:ae70396ad1a434f9c7046fd2dd196fc04b12f9e91ffb859164193be8b6168a7a"},
 ]
 attrs = [
     {file = "attrs-20.3.0-py2.py3-none-any.whl", hash = "sha256:31b2eced602aa8423c2aea9c76a724617ed67cf9513173fd3a4f03e3a929c7e6"},
@@ -364,6 +494,75 @@ colorlog = [
     {file = "colorlog-4.7.2-py2.py3-none-any.whl", hash = "sha256:0a9dcdba6cab68e8a768448b418a858d73c52b37b6e8dea2568296faece393bd"},
     {file = "colorlog-4.7.2.tar.gz", hash = "sha256:18d05b616438a75762d7d214b9ec3b05d274466c9f3ddd92807e755840c88251"},
 ]
+configargparse = [
+    {file = "ConfigArgParse-1.4.tar.gz", hash = "sha256:abef9ff44fb0091f0e3bb2ee7e5b26a02b5b62d45408a5272a9bd461f5b59b4b"},
+]
+dependency-injector = [
+    {file = "dependency-injector-4.31.1.tar.gz", hash = "sha256:b6b28b9571f44d575367c6005ba8aaa9fd2b70310e1c15410925d6f1ee2769ad"},
+    {file = "dependency_injector-4.31.1-cp27-cp27m-macosx_10_9_x86_64.whl", hash = "sha256:efff2d9e4d0b3062c5d9c1637a933dee62e7b6c653a455c081398242c7750928"},
+    {file = "dependency_injector-4.31.1-cp27-cp27m-manylinux1_i686.whl", hash = "sha256:58c305f568fb5965dbde993df806742f617e23c253cd42bdc076cc643e11a7b0"},
+    {file = "dependency_injector-4.31.1-cp27-cp27m-manylinux1_x86_64.whl", hash = "sha256:c31469bf77e347b6ab7c6f0b67bf247d9a6c3d54030f6c3213550e9ac995d935"},
+    {file = "dependency_injector-4.31.1-cp27-cp27m-manylinux2010_i686.whl", hash = "sha256:f92266df33ffca9632c6c0f2973159448f109c6cc6e7d7d3544c621611e3f00c"},
+    {file = "dependency_injector-4.31.1-cp27-cp27m-manylinux2010_x86_64.whl", hash = "sha256:026f81dc6067ce7c3c375347da5d7b888a5394d103543b4dc5b7b79fae71c28d"},
+    {file = "dependency_injector-4.31.1-cp27-cp27m-win32.whl", hash = "sha256:d49229350ab0add4261e9ca6464d9047df28b2312b35ebddf39fbd57d2dc596a"},
+    {file = "dependency_injector-4.31.1-cp27-cp27m-win_amd64.whl", hash = "sha256:fd76f1cc12e0217d0409207f2856db027d75540217869892d1403abbc9f227ad"},
+    {file = "dependency_injector-4.31.1-cp27-cp27mu-manylinux1_i686.whl", hash = "sha256:e6843451671f45d2f904f8b9d632fa56e1c1412600261613ac985b7e6ecc125b"},
+    {file = "dependency_injector-4.31.1-cp27-cp27mu-manylinux1_x86_64.whl", hash = "sha256:f0d52f928e099ba46044dcd07c849a8a120c38a467739ab4fafa464cf989e786"},
+    {file = "dependency_injector-4.31.1-cp27-cp27mu-manylinux2010_i686.whl", hash = "sha256:2eae4774a1330d2706be28cc10616a1186705e24a1ee0dc09a08d62a9bcc3d9f"},
+    {file = "dependency_injector-4.31.1-cp27-cp27mu-manylinux2010_x86_64.whl", hash = "sha256:eb3652d99359e15028efd1ae4c20cb04ae702b240d407518fb8fcdf41d6d6d30"},
+    {file = "dependency_injector-4.31.1-cp35-cp35m-macosx_10_9_x86_64.whl", hash = "sha256:eab67cd7a0479b54a3c05749f930df9ddebc7f90b9585e39e6f2661a34584718"},
+    {file = "dependency_injector-4.31.1-cp35-cp35m-manylinux1_i686.whl", hash = "sha256:2f2f9e67a9cd43216cdcf556f9cdefa5c213f0dc384e5fa5b88a64559bf9cce6"},
+    {file = "dependency_injector-4.31.1-cp35-cp35m-manylinux1_x86_64.whl", hash = "sha256:b685b3761923fe0be803690ab790faa6ab54faa0b3a850b41ab20e9d8b03b279"},
+    {file = "dependency_injector-4.31.1-cp35-cp35m-manylinux2010_i686.whl", hash = "sha256:d38e538b8853cf3a50c5e6db7aca6c50c9185d2fdeab2c8f17ba02a097ebba10"},
+    {file = "dependency_injector-4.31.1-cp35-cp35m-manylinux2010_x86_64.whl", hash = "sha256:13821dc1b59b15eba27ab0b2d4f1d3412c482a756966d24a57bc5817c891fd2b"},
+    {file = "dependency_injector-4.31.1-cp35-cp35m-manylinux2014_aarch64.whl", hash = "sha256:87fb491bc907f96d63d8afbc37fa2f00120b4e7ec09e310050cee1ef21a38c63"},
+    {file = "dependency_injector-4.31.1-cp35-cp35m-win32.whl", hash = "sha256:63b02e65927ec423e01731e53af2be630ac82029645384fa4e02854d3f0dcae7"},
+    {file = "dependency_injector-4.31.1-cp35-cp35m-win_amd64.whl", hash = "sha256:20ca579976081b4c4a69afbbeea32c307a895d22853ec9121dd92ea08a467c06"},
+    {file = "dependency_injector-4.31.1-cp36-cp36m-macosx_10_9_x86_64.whl", hash = "sha256:c428c021c2ad48a0a73474705dac2e3f7b5417a9970a8016d8078d956498a3a2"},
+    {file = "dependency_injector-4.31.1-cp36-cp36m-manylinux1_i686.whl", hash = "sha256:5b2a1d71d79391833ace23675b95f8bd18ccc6a15d1aea4083fd4fe3c9697ba6"},
+    {file = "dependency_injector-4.31.1-cp36-cp36m-manylinux1_x86_64.whl", hash = "sha256:40a39cdf8bf42a175d019e3be549415b5e47557e0d71a4af4d520911870635ac"},
+    {file = "dependency_injector-4.31.1-cp36-cp36m-manylinux2010_i686.whl", hash = "sha256:8775cead30b26f096c441897e4a7b8a219cf3246f089d931bbd9b4ad8d1ea9fd"},
+    {file = "dependency_injector-4.31.1-cp36-cp36m-manylinux2010_x86_64.whl", hash = "sha256:51aed4b2ac8c0deb63198e2dab0b42b363f583a40eade5e99bd5b73abaf4d02e"},
+    {file = "dependency_injector-4.31.1-cp36-cp36m-manylinux2014_aarch64.whl", hash = "sha256:d463e025585b1009d1398390834cc3d1bbd7efe91032428dc9ec03096790039a"},
+    {file = "dependency_injector-4.31.1-cp36-cp36m-win32.whl", hash = "sha256:aff8a3fb5c530b5c7510a18765bd67badaa59d149b05d97fb463fc5f8acb2ff9"},
+    {file = "dependency_injector-4.31.1-cp36-cp36m-win_amd64.whl", hash = "sha256:5248730887f933e665721d67c08ffff527d1f19f4000ca66fbb8a352a0075574"},
+    {file = "dependency_injector-4.31.1-cp37-cp37m-macosx_10_9_x86_64.whl", hash = "sha256:79009f72a7672710db6d0be1510cd7dda446a7291dca2be7950e6ecfcc1fd467"},
+    {file = "dependency_injector-4.31.1-cp37-cp37m-manylinux1_i686.whl", hash = "sha256:190610934fb417277cacda665e1337402c933556ca6ef919e4ffbeb33b5fec57"},
+    {file = "dependency_injector-4.31.1-cp37-cp37m-manylinux1_x86_64.whl", hash = "sha256:38bf1f78fc7578d8fc84200d86f2f11a0c3bc93fe7ed54e2924bcd05af35610f"},
+    {file = "dependency_injector-4.31.1-cp37-cp37m-manylinux2010_i686.whl", hash = "sha256:a26006a125fefc940a8e64eaf188cb3709644a50df73f680e444dd046cefe4c6"},
+    {file = "dependency_injector-4.31.1-cp37-cp37m-manylinux2010_x86_64.whl", hash = "sha256:ac55a50ea4179db56d7eeda05059f9e1172b9a851ac9a760a2f729341188dbdb"},
+    {file = "dependency_injector-4.31.1-cp37-cp37m-manylinux2014_aarch64.whl", hash = "sha256:bb5071af5bde160041ba521a898102177493c687494733d024bff2e1061b90f8"},
+    {file = "dependency_injector-4.31.1-cp37-cp37m-win32.whl", hash = "sha256:05cf38355396faf9fa84161064e6a641ebe983a9aa7aab56388831d07c002701"},
+    {file = "dependency_injector-4.31.1-cp37-cp37m-win_amd64.whl", hash = "sha256:595aca38e45e00dd9300e011f529ca5791963bc5b884591cc7a41346146d322d"},
+    {file = "dependency_injector-4.31.1-cp38-cp38-macosx_10_9_x86_64.whl", hash = "sha256:10e878127c3a2f1dfadb5cf037ac6f5e895ea8887a8a315d4173d6d4f427f0eb"},
+    {file = "dependency_injector-4.31.1-cp38-cp38-manylinux1_i686.whl", hash = "sha256:32d6b0ad1fc83c000c45d92733d5b999af953e2a91769e7e88e1f5f39243ec53"},
+    {file = "dependency_injector-4.31.1-cp38-cp38-manylinux1_x86_64.whl", hash = "sha256:07597f224eda4d6551833dea998c4090247b88e92f34ebb482073c3fadd58e0a"},
+    {file = "dependency_injector-4.31.1-cp38-cp38-manylinux2010_i686.whl", hash = "sha256:b5ff75cc646aec3e858043757f00226213d24cb6c62ca721c100e3cf647cdb86"},
+    {file = "dependency_injector-4.31.1-cp38-cp38-manylinux2010_x86_64.whl", hash = "sha256:b4f1318a1243fbdb2a1d6d5cf28d06da662ff018c14b25d1dabb3e484cb7c7e9"},
+    {file = "dependency_injector-4.31.1-cp38-cp38-manylinux2014_aarch64.whl", hash = "sha256:b0193c32e67e6a5596ee0f458a5ae04fc57b92c6cccbe7aac19c4b956a9f2a97"},
+    {file = "dependency_injector-4.31.1-cp38-cp38-win32.whl", hash = "sha256:399becdaa93473a69c6a415ae5c395c7830ad9f54d4997eb58db7f8bf0281782"},
+    {file = "dependency_injector-4.31.1-cp38-cp38-win_amd64.whl", hash = "sha256:75d6a168e9e7b6d3576c7f443b97131d342c27a276b80a40227dbc18dd755742"},
+    {file = "dependency_injector-4.31.1-cp39-cp39-macosx_10_9_x86_64.whl", hash = "sha256:4a83712d2b9bc245565ec471568f712fc6e9137797334c1cb55d145dc8949464"},
+    {file = "dependency_injector-4.31.1-cp39-cp39-manylinux1_i686.whl", hash = "sha256:301ac5b858c348fb3d62b1e8a9f9a0ead6324d934d0f2a0c79c812599b505bab"},
+    {file = "dependency_injector-4.31.1-cp39-cp39-manylinux1_x86_64.whl", hash = "sha256:74cb9a345d00b2a1812824add09f7dc885126d1e42897f413e3bb84bdbe694fd"},
+    {file = "dependency_injector-4.31.1-cp39-cp39-manylinux2010_i686.whl", hash = "sha256:cc853ff88c917dacaf5cd0dc219c0d907444f04c254a41c2a5c8ec9316231d77"},
+    {file = "dependency_injector-4.31.1-cp39-cp39-manylinux2010_x86_64.whl", hash = "sha256:9d3989e4a7913897fa381ad8cc7f50f7a522875e084480b8e3a2d33eb87734b5"},
+    {file = "dependency_injector-4.31.1-cp39-cp39-manylinux2014_aarch64.whl", hash = "sha256:1785470117f7790d8aff4fff66a8761045ece61705a629f3b4128293b293d396"},
+    {file = "dependency_injector-4.31.1-cp39-cp39-win32.whl", hash = "sha256:b2b855f82ed82954c9f222c6634a0d4214b2cb2d838339b13432789f5b61c7f6"},
+    {file = "dependency_injector-4.31.1-cp39-cp39-win_amd64.whl", hash = "sha256:bebebf1289a7464c2494925b7ea2d1e2d62c61ce754059930a4ed5a81dc4db6d"},
+    {file = "dependency_injector-4.31.1-pp27-pypy_73-macosx_10_9_x86_64.whl", hash = "sha256:28417feac336a3364f3992421ce62844f0541471f2c159000b9305f525c59b95"},
+    {file = "dependency_injector-4.31.1-pp27-pypy_73-manylinux1_x86_64.whl", hash = "sha256:fd884ff855a31b5e2600292c5e9bbd6ed82b6f1a9f616e9e5e4afe49bebce27b"},
+    {file = "dependency_injector-4.31.1-pp27-pypy_73-manylinux2010_x86_64.whl", hash = "sha256:f0a479995a4e3b9870e2d168cf0252635bde3605778958534bed706a026878c7"},
+    {file = "dependency_injector-4.31.1-pp27-pypy_73-win32.whl", hash = "sha256:5d70745c4aabaec02a4f956af9f6669c03cce065ba3c4065d8a8ad7c42b85e6e"},
+    {file = "dependency_injector-4.31.1-pp36-pypy36_pp73-macosx_10_9_x86_64.whl", hash = "sha256:35aab47c5a77cde287d653ebeeaad77606a31552c982efcef67f0d016edd3e1b"},
+    {file = "dependency_injector-4.31.1-pp36-pypy36_pp73-manylinux1_x86_64.whl", hash = "sha256:89ef28a1cf2447c251726fd3e7cf2227dd4c35b292a385009ec642d6582b0547"},
+    {file = "dependency_injector-4.31.1-pp36-pypy36_pp73-manylinux2010_x86_64.whl", hash = "sha256:7e655d763e70b1dabe42eb2519549dd499e2c533e170ab466ed1b810e8107038"},
+    {file = "dependency_injector-4.31.1-pp36-pypy36_pp73-win32.whl", hash = "sha256:a6c2df4252d86df6b92730d9005ffa5cab01556caf5819ebffaf5f7b4396b8e9"},
+    {file = "dependency_injector-4.31.1-pp37-pypy37_pp73-macosx_10_9_x86_64.whl", hash = "sha256:c50ce8638350cf0419abaebe2baf6322a1b671dac6ccd44f6ef6992bc5190e1a"},
+    {file = "dependency_injector-4.31.1-pp37-pypy37_pp73-manylinux1_x86_64.whl", hash = "sha256:18bd27823a8ac90441016c72b737ff2e28834a645f467fbfe98760b394b53ec0"},
+    {file = "dependency_injector-4.31.1-pp37-pypy37_pp73-manylinux2010_x86_64.whl", hash = "sha256:647dbc209760ef1cc766cfaa47b6bdff13d41d737cbe9d6b400bac39a60f6d57"},
+    {file = "dependency_injector-4.31.1-pp37-pypy37_pp73-win32.whl", hash = "sha256:06160af4b367789d80bd794e91cdbb73da2799820be6cb2660393c98b75c4c80"},
+]
 flake8 = [
     {file = "flake8-3.8.4-py2.py3-none-any.whl", hash = "sha256:749dbbd6bfd0cf1318af27bf97a14e28e5ff548ef8e5b1566ccfb25a11e7c839"},
     {file = "flake8-3.8.4.tar.gz", hash = "sha256:aadae8761ec651813c24be05c6f7b4680857ef6afaae4651a4eccaef97ce6c3b"},
@@ -372,9 +571,13 @@ idna = [
     {file = "idna-3.1-py3-none-any.whl", hash = "sha256:5205d03e7bcbb919cc9c19885f9920d622ca52448306f2377daede5cf3faac16"},
     {file = "idna-3.1.tar.gz", hash = "sha256:c5b02147e01ea9920e6b0a3f1f7bb833612d507592c837a6c49552768f4054e1"},
 ]
+iniconfig = [
+    {file = "iniconfig-1.1.1-py2.py3-none-any.whl", hash = "sha256:011e24c64b7f47f6ebd835bb12a743f2fbe9a26d4cecaa7f53bc4f35ee9da8b3"},
+    {file = "iniconfig-1.1.1.tar.gz", hash = "sha256:bc3af051d7d14b2ee5ef9969666def0cd1a000e121eaea580d4a313df4b37f32"},
+]
 isort = [
-    {file = "isort-5.7.0-py3-none-any.whl", hash = "sha256:fff4f0c04e1825522ce6949973e83110a6e907750cd92d128b0d14aaaadbffdc"},
-    {file = "isort-5.7.0.tar.gz", hash = "sha256:c729845434366216d320e936b8ad6f9d681aab72dc7cbc2d51bedc3582f3ad1e"},
+    {file = "isort-5.8.0-py3-none-any.whl", hash = "sha256:2bb1680aad211e3c9944dbce1d4ba09a989f04e238296c87fe2139faa26d655d"},
+    {file = "isort-5.8.0.tar.gz", hash = "sha256:0a943902919f65c5684ac4e0154b1ad4fac6dcaa5d9f3426b732f1c8b5419be6"},
 ]
 mccabe = [
     {file = "mccabe-0.6.1-py2.py3-none-any.whl", hash = "sha256:ab8a6258860da4b6677da4bd2fe5dc2c659cff31b3ee4f7f5d64e79735b80d42"},
@@ -447,9 +650,21 @@ mypy-extensions = [
     {file = "mypy_extensions-0.4.3-py2.py3-none-any.whl", hash = "sha256:090fedd75945a69ae91ce1303b5824f428daf5a028d2f6ab8a299250a846f15d"},
     {file = "mypy_extensions-0.4.3.tar.gz", hash = "sha256:2d82818f5bb3e369420cb3c4060a7970edba416647068eb4c5343488a6c604a8"},
 ]
+packaging = [
+    {file = "packaging-20.9-py2.py3-none-any.whl", hash = "sha256:67714da7f7bc052e064859c05c595155bd1ee9f69f76557e21f051443c20947a"},
+    {file = "packaging-20.9.tar.gz", hash = "sha256:5b327ac1320dc863dca72f4514ecc086f31186744b84a230374cc1fd776feae5"},
+]
 pathspec = [
     {file = "pathspec-0.8.1-py2.py3-none-any.whl", hash = "sha256:aa0cb481c4041bf52ffa7b0d8fa6cd3e88a2ca4879c533c9153882ee2556790d"},
     {file = "pathspec-0.8.1.tar.gz", hash = "sha256:86379d6b86d75816baba717e64b1a3a3469deb93bb76d613c9ce79edc5cb68fd"},
+]
+pluggy = [
+    {file = "pluggy-0.13.1-py2.py3-none-any.whl", hash = "sha256:966c145cd83c96502c3c3868f50408687b38434af77734af1e9ca461a4081d2d"},
+    {file = "pluggy-0.13.1.tar.gz", hash = "sha256:15b2acde666561e1298d71b523007ed7364de07029219b604cf808bfa1c765b0"},
+]
+py = [
+    {file = "py-1.10.0-py2.py3-none-any.whl", hash = "sha256:3b80836aa6d1feeaa108e046da6423ab8f6ceda6468545ae8d02d9d58d18818a"},
+    {file = "py-1.10.0.tar.gz", hash = "sha256:21b81bda15b66ef5e1a777a21c4dcd9c20ad3efd0b3f817e7a809035269e1bd3"},
 ]
 pycodestyle = [
     {file = "pycodestyle-2.6.0-py2.py3-none-any.whl", hash = "sha256:2295e7b2f6b5bd100585ebcb1f616591b652db8a741695b3d8f5d28bdc934367"},
@@ -458,6 +673,14 @@ pycodestyle = [
 pyflakes = [
     {file = "pyflakes-2.2.0-py2.py3-none-any.whl", hash = "sha256:0d94e0e05a19e57a99444b6ddcf9a6eb2e5c68d3ca1e98e90707af8152c90a92"},
     {file = "pyflakes-2.2.0.tar.gz", hash = "sha256:35b2d75ee967ea93b55750aa9edbbf72813e06a66ba54438df2cfac9e3c27fc8"},
+]
+pyparsing = [
+    {file = "pyparsing-2.4.7-py2.py3-none-any.whl", hash = "sha256:ef9d7589ef3c200abe66653d3f1ab1033c3c419ae9b9bdb1240a85b024efc88b"},
+    {file = "pyparsing-2.4.7.tar.gz", hash = "sha256:c203ec8783bf771a155b207279b9bccb8dea02d8f0c9e5f8ead507bc3246ecc1"},
+]
+pytest = [
+    {file = "pytest-6.2.2-py3-none-any.whl", hash = "sha256:b574b57423e818210672e07ca1fa90aaf194a4f63f3ab909a2c67ebb22913839"},
+    {file = "pytest-6.2.2.tar.gz", hash = "sha256:9d1edf9e7d0b84d72ea3dbcdfd22b35fb543a5e8f2a60092dd578936bf63d7f9"},
 ]
 regex = [
     {file = "regex-2020.11.13-cp36-cp36m-macosx_10_9_x86_64.whl", hash = "sha256:8b882a78c320478b12ff024e81dc7d43c1462aa4a3341c754ee65d857a521f85"},
@@ -501,6 +724,10 @@ regex = [
     {file = "regex-2020.11.13-cp39-cp39-win32.whl", hash = "sha256:f8f295db00ef5f8bae530fc39af0b40486ca6068733fb860b42115052206466f"},
     {file = "regex-2020.11.13-cp39-cp39-win_amd64.whl", hash = "sha256:a15f64ae3a027b64496a71ab1f722355e570c3fac5ba2801cafce846bf5af01d"},
     {file = "regex-2020.11.13.tar.gz", hash = "sha256:83d6b356e116ca119db8e7c6fc2983289d87b27b3fac238cfe5dca529d884562"},
+]
+six = [
+    {file = "six-1.15.0-py2.py3-none-any.whl", hash = "sha256:8b74bedcbbbaca38ff6d7491d76f2b06b3592611af620f8426e82dddb04a5ced"},
+    {file = "six-1.15.0.tar.gz", hash = "sha256:30639c035cdb23534cd4aa2dd52c3bf48f06e5f4a941509c8bafd8ce11080259"},
 ]
 toml = [
     {file = "toml-0.10.2-py2.py3-none-any.whl", hash = "sha256:806143ae5bfb6a3c6e736a764057db0e6a0e05e338b5630894a5f779cabb4f9b"},
