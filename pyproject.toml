@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "grabbers"
-version = "1.1.3"
+version = "1.1.4"
 description = "Grabbers for free"
 authors = ["imflop <imflop@gmail.com>"]
 exclude = ["tests", "*.tests"]
