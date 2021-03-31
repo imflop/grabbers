@@ -14,12 +14,12 @@ jobs:
       - name: Prepare
         id: prep
         run: |
-          DOCKER_IMAGE=metcalfc/docker-action-examples
+          DOCKER_IMAGE=imflop/grabbers
           VERSION=edge
           if [[ $GITHUB_REF == refs/tags/* ]]; then
             VERSION=${GITHUB_REF#refs/tags/v}
           fi
-          if [ "${{ github.event_name }}" = "schedule" ]; then
+          if [ "${{ github.event_name }}" = "push" ]; then
             VERSION=nightly
           fi
           TAGS="${DOCKER_IMAGE}:${VERSION}"
@@ -58,7 +58,6 @@ jobs:
           builder: ${{ steps.buildx.outputs.name }}
           context: ./
           file: ./Dockerfile
-          target: prod
           platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/ppc64le,linux/s390x
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.prep.outputs.tags }}
