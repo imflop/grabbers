@@ -28,7 +28,7 @@ if __name__ == "__main__":
 
     basic_config(args.log_level, args.log_format, buffered=True)
 
-    sock = bind_socket(address="127.0.0.1", port=8888, proto_name="http")
+    sock = bind_socket(address="0.0.0.0", port=8888, proto_name="http")
 
     app = create_app()
     run_app(app, sock=sock)

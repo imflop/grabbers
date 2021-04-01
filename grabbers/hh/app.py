@@ -18,7 +18,17 @@ def create_app() -> Application:
             allow_credentials=True,
             expose_headers="*",
             allow_headers="*",
-        )
+        ),
+        "http://0.0.0.0:8080": aiohttp_cors.ResourceOptions(
+            allow_credentials=True,
+            expose_headers="*",
+            allow_headers="*",
+        ),
+        "http://api:8080": aiohttp_cors.ResourceOptions(
+            allow_credentials=True,
+            expose_headers="*",
+            allow_headers="*",
+        ),
     }
 
     cors = aiohttp_cors.setup(app, defaults=cors_default)
