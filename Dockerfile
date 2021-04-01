@@ -40,4 +40,6 @@ COPY --from=builder /venv /venv
 
 WORKDIR /app
 
+EXPOSE 8888
+
 CMD ["/venv/bin/python", "-m", "grabbers.hh"]
